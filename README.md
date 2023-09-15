@@ -1,29 +1,25 @@
-# Apollo Server and Client Example
+# Next apollo TODO
 
-[Apollo](https://www.apollographql.com/client/) is a GraphQL client that allows you to easily query the exact data you need from a GraphQL server. In addition to fetching and mutating data, Apollo analyzes your queries and their results to construct a client-side cache of your data, which is kept up to date as further queries and mutations are run. The integration with Next and Apollo Server is implemented using the [apollo-server-integration-next](https://github.com/apollo-server-integrations/apollo-server-integration-next) community package.
+[![node](https://img.shields.io/badge/node-%2018.16.1-brightgreen.svg)](https://nodejs.org)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
-In this simple example, we integrate Apollo seamlessly with [Next.js data fetching methods](https://nextjs.org/docs/basic-features/data-fetching) to fetch queries in the server and hydrate them in the browser.
+Start from [apollo-server-integration-next](https://github.com/apollo-server-integrations/apollo-server-integration-next)
 
-## Deploy your own
+It can be with db service (like docker and docker-compose)
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/api-routes-apollo-server-and-client)
+However, I want a very quick solution for demo usage. So I find a headless CMS to simulate data storage part. But the api seems very slow.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/api-routes-apollo-server-and-client&project-name=api-routes-apollo-server-and-client&repository-name=api-routes-apollo-server-and-client)
+The demo includes
 
-## How to use
+1. User login part(using cookies)
+2. Add todo items base on user
+3. Change todo status, delete todo
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+There are still lots of function need to be improved. (Login is a big issues)
 
-```bash
-npx create-next-app --example api-routes-apollo-server-and-client api-routes-apollo-server-and-client-app
-```
+## Build from scratch
 
-```bash
-yarn create next-app --example api-routes-apollo-server-and-client api-routes-apollo-server-and-client-app
-```
-
-```bash
-pnpm create next-app --example api-routes-apollo-server-and-client api-routes-apollo-server-and-client-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+1. Fork the repo
+2. Sign up a [cosmicjs](https://www.cosmicjs.com) account
+3. Import the json file in example directory
+4. Run the server

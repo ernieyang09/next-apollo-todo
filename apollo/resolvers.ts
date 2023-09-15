@@ -92,7 +92,6 @@ export const resolvers = {
         res.setHeader('set-cookie', `jwtToken=${token}; path=/; httponly;`)
         result = true
       } catch (e) {
-        console.log(e)
         if (e.status !== 404) {
           // TODO
         }
