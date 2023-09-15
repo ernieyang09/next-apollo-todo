@@ -1,13 +1,16 @@
 import gql from 'graphql-tag'
 import { useEffect, useState } from 'react'
 import { useMutation } from '@apollo/client'
-import Button from '@mui/material/Button'
-import TextField from '@mui/material/TextField'
-import Dialog from '@mui/material/Dialog'
-import DialogActions from '@mui/material/DialogActions'
-import DialogContent from '@mui/material/DialogContent'
-import DialogContentText from '@mui/material/DialogContentText'
-import DialogTitle from '@mui/material/DialogTitle'
+import {
+  Button,
+  Typography,
+  TextField,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+} from '@mui/material'
 
 const LOGIN_MUTATION = gql`
   mutation Login($username: String!, $password: String!) {
@@ -19,15 +22,15 @@ export default function LoginDialog({ open, setOpen }) {
   const [loading, setLoading] = useState(false)
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
 
   const [login, { client }] = useMutation(LOGIN_MUTATION)
 
-  useEffect(()=> {
+  useEffect(() => {
     if (!open) {
       setUsername('')
       setPassword('')
     }
-
   }, [open])
 
   return (
@@ -69,6 +72,7 @@ export default function LoginDialog({ open, setOpen }) {
               setPassword(value)
             }}
           />
+          <Typography height={24} color="error">{error}</Typography>
         </DialogContent>
         <DialogActions>
           <Button
@@ -82,12 +86,15 @@ export default function LoginDialog({ open, setOpen }) {
             disabled={loading}
             onClick={async () => {
               setLoading(true)
+              setError('')
               const r = await login({ variables: { username, password } })
               if (r.data?.login) {
                 client.refetchQueries({ include: ['QueryMe'] })
+                setOpen(false)
+              } else {
+                setError('Login fail')
               }
               setLoading(false)
-              setOpen(false)
             }}>
             Login
           </Button>
