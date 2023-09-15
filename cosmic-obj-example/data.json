@@ -1,0 +1,295 @@
+{
+  "version": "2",
+  "bucket": { "slug": "todo-env", "title": "env" },
+  "object_types": [
+    {
+      "title": "Status",
+      "slug": "status",
+      "singular": "Status",
+      "metafields": [
+        {
+          "id": "091a7cbb-c349-4b12-b72f-6945f56210cd",
+          "title": "value",
+          "key": "value",
+          "type": "select-dropdown",
+          "value": "Undo",
+          "helptext": "",
+          "required": false,
+          "options": [
+            { "key": "undo", "value": "Undo" },
+            { "key": "doing", "value": "Doing" },
+            { "key": "finished", "value": "Finished" }
+          ]
+        }
+      ],
+      "options": { "slug_field": true, "content_editor": false },
+      "emoji": "📁",
+      "singleton": true,
+      "created_at": "2023-09-12T11:07:38.089Z",
+      "modified_at": "2023-09-12T11:07:38.089Z",
+      "localization": false,
+      "locales": [],
+      "priority_locale": ""
+    },
+    {
+      "title": "Users",
+      "slug": "users",
+      "singular": "User",
+      "metafields": [
+        {
+          "id": "45dbdc1a-4024-4ead-a5e9-caae0660bdb8",
+          "title": "username",
+          "key": "username",
+          "type": "text",
+          "value": "",
+          "helptext": "",
+          "required": false
+        },
+        {
+          "id": "47eae486-b7b4-4c9c-a12f-cd0f1d062fbc",
+          "title": "password",
+          "key": "password",
+          "type": "text",
+          "value": "",
+          "helptext": "",
+          "required": false
+        },
+        {
+          "id": "51dbf128-f5d2-4592-a0a6-9aa3f4137823",
+          "title": "todos",
+          "key": "todos",
+          "type": "objects",
+          "value": [],
+          "helptext": "",
+          "required": false,
+          "object_type": "todos"
+        }
+      ],
+      "options": { "slug_field": false, "content_editor": false },
+      "emoji": "📁",
+      "singleton": false,
+      "created_at": "2023-09-11T10:24:27.193Z",
+      "modified_at": "2023-09-12T11:25:45.972Z",
+      "localization": false,
+      "locales": [],
+      "priority_locale": "",
+      "folder": ""
+    },
+    {
+      "title": "TODOS",
+      "slug": "todos",
+      "singular": "TODO",
+      "metafields": [
+        {
+          "id": "fc6d55fa-0797-48cc-9f6f-9ca54c652c23",
+          "title": "tag",
+          "key": "tag",
+          "type": "text",
+          "value": "",
+          "helptext": "",
+          "required": false
+        }
+      ],
+      "options": { "slug_field": false, "content_editor": false },
+      "emoji": "📁",
+      "created_at": "2023-09-12T10:58:52.557Z",
+      "modified_at": "2023-09-12T11:35:37.247Z",
+      "localization": false,
+      "locales": [],
+      "priority_locale": "",
+      "folder": "",
+      "singleton": false
+    }
+  ],
+  "objects": [
+    {
+      "_id": "6504357c589726000815c256",
+      "slug": "example0301",
+      "title": "example0301",
+      "content": "",
+      "metafields": [
+        {
+          "id": "fc6d55fa-0797-48cc-9f6f-9ca54c652c23",
+          "key": "tag",
+          "value": "undo",
+          "type": "text"
+        }
+      ],
+      "type_slug": "todos",
+      "created_at": "2023-09-15T10:44:12.360Z",
+      "modified_at": "2023-09-15T10:44:12.360Z",
+      "status": "published",
+      "published_at": "2023-09-15T10:44:12.360Z",
+      "order": 1694774652360
+    },
+    {
+      "_id": "65043546589726000815c255",
+      "slug": "example0201",
+      "title": "example0201",
+      "content": "",
+      "metafields": [
+        {
+          "id": "fc6d55fa-0797-48cc-9f6f-9ca54c652c23",
+          "key": "tag",
+          "value": "undo",
+          "type": "text"
+        }
+      ],
+      "type_slug": "todos",
+      "created_at": "2023-09-15T10:43:18.939Z",
+      "modified_at": "2023-09-15T10:43:18.939Z",
+      "status": "published",
+      "published_at": "2023-09-15T10:43:18.939Z",
+      "order": 1694774598939
+    },
+    {
+      "_id": "6504352e589726000815c254",
+      "slug": "example0101",
+      "title": "example0101",
+      "content": "",
+      "metafields": [
+        {
+          "id": "fc6d55fa-0797-48cc-9f6f-9ca54c652c23",
+          "key": "tag",
+          "value": "undo",
+          "type": "text"
+        }
+      ],
+      "type_slug": "todos",
+      "created_at": "2023-09-15T10:42:54.019Z",
+      "modified_at": "2023-09-15T10:42:54.019Z",
+      "status": "published",
+      "published_at": "2023-09-15T10:42:54.019Z",
+      "order": 1694774574019
+    },
+    {
+      "_id": "6504205f16b20d00082023c4",
+      "slug": "example03",
+      "title": "example03",
+      "content": "",
+      "metafields": [
+        {
+          "id": "45dbdc1a-4024-4ead-a5e9-caae0660bdb8",
+          "key": "username",
+          "value": "example03",
+          "type": "text"
+        },
+        {
+          "id": "47eae486-b7b4-4c9c-a12f-cd0f1d062fbc",
+          "key": "password",
+          "value": "example03",
+          "type": "text"
+        },
+        {
+          "id": "51dbf128-f5d2-4592-a0a6-9aa3f4137823",
+          "key": "todos",
+          "value": ["6504357c589726000815c256"],
+          "type": "objects"
+        }
+      ],
+      "type_slug": "users",
+      "created_at": "2023-09-15T09:14:07.735Z",
+      "modified_at": "2023-09-15T10:44:15.261Z",
+      "status": "published",
+      "published_at": "2023-09-15T09:14:07.735Z",
+      "order": 1694769247735,
+      "object_type_rev_id": "65004aba1a7dbc9578689a89"
+    },
+    {
+      "_id": "6504205616b20d00082023c2",
+      "slug": "example02",
+      "title": "example02",
+      "content": "",
+      "metafields": [
+        {
+          "id": "45dbdc1a-4024-4ead-a5e9-caae0660bdb8",
+          "key": "username",
+          "value": "example02",
+          "type": "text"
+        },
+        {
+          "id": "47eae486-b7b4-4c9c-a12f-cd0f1d062fbc",
+          "key": "password",
+          "value": "example02",
+          "type": "text"
+        },
+        {
+          "id": "51dbf128-f5d2-4592-a0a6-9aa3f4137823",
+          "key": "todos",
+          "value": ["65043546589726000815c255"],
+          "type": "objects"
+        }
+      ],
+      "type_slug": "users",
+      "created_at": "2023-09-15T09:13:58.735Z",
+      "modified_at": "2023-09-15T10:43:21.782Z",
+      "status": "published",
+      "published_at": "2023-09-15T09:13:58.735Z",
+      "order": 1694769238735,
+      "object_type_rev_id": "65004aba1a7dbc9578689a89"
+    },
+    {
+      "_id": "6504204c16b20d00082023c0",
+      "slug": "example01",
+      "title": "example01",
+      "content": "",
+      "metafields": [
+        {
+          "id": "45dbdc1a-4024-4ead-a5e9-caae0660bdb8",
+          "key": "username",
+          "value": "example01",
+          "type": "text"
+        },
+        {
+          "id": "47eae486-b7b4-4c9c-a12f-cd0f1d062fbc",
+          "key": "password",
+          "value": "example01",
+          "type": "text"
+        },
+        {
+          "id": "51dbf128-f5d2-4592-a0a6-9aa3f4137823",
+          "key": "todos",
+          "value": [
+            "6504352e589726000815c254",
+            "6504349e589726000815c253",
+            "65043485589726000815c252",
+            "6504347a589726000815c251"
+          ],
+          "type": "objects"
+        }
+      ],
+      "type_slug": "users",
+      "created_at": "2023-09-15T09:13:48.573Z",
+      "modified_at": "2023-09-15T10:42:58.904Z",
+      "status": "published",
+      "published_at": "2023-09-15T09:13:48.573Z",
+      "order": 1694769228574,
+      "object_type_rev_id": "65004aba1a7dbc9578689a89"
+    },
+    {
+      "_id": "650046c318cb250008e145dc",
+      "slug": "status",
+      "title": "status",
+      "content": "",
+      "metafields": [
+        {
+          "id": "091a7cbb-c349-4b12-b72f-6945f56210cd",
+          "key": "value",
+          "value": "",
+          "type": "select-dropdown"
+        }
+      ],
+      "type_slug": "status",
+      "created_at": "2023-09-12T11:08:51.271Z",
+      "modified_at": "2023-09-12T11:33:55.161Z",
+      "status": "published",
+      "published_at": "2023-09-12T11:33:55.161Z",
+      "order": 1694516931271,
+      "object_type_rev_id": "6500467a971b4b0008342c4c",
+      "publish_at": null,
+      "thumbnail": ""
+    }
+  ],
+  "media": [],
+  "extensions": []
+}
