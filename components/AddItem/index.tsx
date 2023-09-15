@@ -1,6 +1,6 @@
 import gql from 'graphql-tag'
 import { useState } from 'react'
-import { useMutation } from 'react-apollo'
+import { useMutation } from '@apollo/client'
 import { InputBase, Divider, Button, Paper } from '@mui/material'
 
 import useMe from '../../hooks/useMe'

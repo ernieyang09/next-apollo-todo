@@ -1,9 +1,8 @@
 import gql from 'graphql-tag'
 import { Grid, Typography } from '@mui/material'
-import { useMutation } from 'react-apollo'
+import { useMutation } from '@apollo/client'
 import useMe from '../../hooks/useMe'
 import { useLoadingFormContext } from '../../context/loginFormContext'
-
 
 const LOGOUT_MUTATION = gql`
   mutation logout {
@@ -33,7 +32,13 @@ const Logout = ({ username }) => {
   return (
     <>
       {`Hello ${username}`}{' '}
-      <Typography color="primary" sx={{ ml: '4px', cursor: 'pointer' }} onClick={logout}>
+      <Typography
+        color="primary"
+        sx={{ ml: '4px', cursor: 'pointer' }}
+        component="span"
+        onClick={() => {
+          logout()
+        }}>
         Log out
       </Typography>
     </>

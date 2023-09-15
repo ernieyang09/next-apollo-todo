@@ -1,13 +1,29 @@
-import { ApolloServer } from '@apollo/server'
-import { NextRequest, NextResponse } from 'next/server'
+import {
+  ApolloServer,
+  ApolloServerPlugin,
+  GraphQLRequestContext,
+  GraphQLRequestListener,
+} from '@apollo/server'
 import { startServerAndCreateNextHandler } from '@as-integrations/next'
 import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin/landingPage/default'
-
 import { schema } from '../../apollo/schema'
 
+export class LoggingPlugin implements ApolloServerPlugin {
+  // Fires whenever a GraphQL request is received from a client.
+  async requestDidStart(
+    requestContext: GraphQLRequestContext<any>,
+  ): Promise<GraphQLRequestListener<any>> {
+    return {
+      async willSendResponse() {
+        // console.log('Will send response');
+      },
+    }
+  }
+}
+
 const authMiddleware = () => ({
-  requestDidStart: () => ({
-    didEncounterErrors: (requestContext) => {
+  requestDidStart: async () => ({
+    didEncounterErrors: async (requestContext) => {
       const {
         errors,
         contextValue: { res },
@@ -22,17 +38,12 @@ const authMiddleware = () => ({
   }),
 })
 
-export type Context = {
-  request: NextRequest
-  response: NextResponse
-}
-
-const apolloServer = new ApolloServer<Context>({
+const apolloServer = new ApolloServer({
   schema,
   plugins: [ApolloServerPluginLandingPageLocalDefault({ includeCookies: true }), authMiddleware()],
 })
 
-export default startServerAndCreateNextHandler<Context>(apolloServer, {
+export default startServerAndCreateNextHandler(apolloServer, {
   context: async (req, res) => {
     return { req, res }
   },

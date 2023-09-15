@@ -4,7 +4,7 @@ import { Box, Grid, Alert, AlertTitle, Paper } from '@mui/material'
 
 import ToggleButton from '@mui/material/ToggleButton'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
-import { useQuery } from 'react-apollo'
+import { useQuery } from '@apollo/client'
 import { useState } from 'react'
 import AddItem from '../components/AddItem'
 import TodoList from '../components/TodoList'

@@ -1,5 +1,5 @@
 import gql from 'graphql-tag'
-import { useQuery } from 'react-apollo'
+import { useQuery } from '@apollo/client'
 
 const ME_QUERY = gql`
   query {
